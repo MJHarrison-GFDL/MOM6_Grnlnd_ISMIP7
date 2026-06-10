@@ -16,8 +16,8 @@ SHELF_2EQ_GAMMA_T = 1.0E-04     !   [m s-1]
 
 ICE_A_GLEN_CONFIG = "FILE"  !This specifies how the ice-stiffness parameter is specified.
                             !Valid values are: "CONSTANT" and "FILE".
-ICE_STIFFNESS_FILE = "/path_to_stiffness_file" ! File with ice-stiffness parameters
-A_GLEN_VARNAME = "a_glen_varname" ! The name of the variable with ice-stiffness parameter.
+ICE_STIFFNESS_FILE = "Grnld_4km_rheology.nc" ! File with ice-stiffness parameters
+A_GLEN_VARNAME = "A_glen" ! The name of the variable with ice-stiffness parameter.
 A_GLEN = 2.261e-25     ! ice stiffness parameter Pa ^ (-1/3) s
 ICE_VISCOSITY_COMPUTE = "MODEL"   ! This specifies whether the ice-viscosity is constant, computed internally by the model or
                                 ! computed from observations and read from a file
@@ -29,8 +29,8 @@ GLEN_EXPONENT = 3               ! ice flow-law exponent
 MIN_STRAIN_RATE_GLEN = 1e-22    ! regularization parameter for flow law (s)^(-1)
 ICE_BASAL_FRICTION_CONFIG = "FILE"  !This specifies how the initial ice profile is specified. "
                                         !Valid values are: "CONSTANT" and "FILE".
-BASAL_FRICTION_FILE = "/path_to_basal_friction_file" ! File with basal friction coefficients
-BASAL_FRICTION_VARNAME = "basal_friction_varname" ! The name of the variable with basal friction coefficients
+BASAL_FRICTION_FILE = "Grnld_4km_rheology.nc" ! File with basal friction coefficients
+BASAL_FRICTION_VARNAME = "tau_b_beta" ! The name of the variable with basal friction coefficients
 BASAL_FRICTION_COEFF = 1.0e10   ! basal friction coeffiecient Pa (m/s)^(-1)
 BASAL_FRICTION_EXP = 1          ! sliding law exponent
 AVG_OCEAN_DENSITY = 1035.0       ! average ocean density (kg/m^3)
@@ -48,23 +48,23 @@ GROUNDING_LINE_INTERPOLATE = True ! This specifies whether subgrid grounding lin
 GROUNDING_LINE_INTERP_SUBGRID_N = 5 ! This specifies the number of subgrid fractions
 
 ! === module MOM_ice_shelf_initialize ===
-ICE_VELOCITY_FILE = "/path_to_ice_vel_file"!  The file for the ice-shelf velocities.
-ICE_U_VEL_VARNAME = "VX"   ![m/s] default = "u_shelf"
+ICE_VELOCITY_FILE = "Grnld_4km_velocity.nc"!  The file for the ice-shelf velocities.
+ICE_U_VEL_VARNAME = "uvel"   ![m/s] default = "u_shelf"
                                ! The  variable for the u ice-shelf  velocity component.
-ICE_V_VEL_VARNAME = "VY"   ![m/s] default = "v_shelf"
+ICE_V_VEL_VARNAME = "vvel"   ![m/s] default = "v_shelf"
                                 ! The  variable for the v ice-shelf  velocity component
-BED_TOPO_FILE = "/path_to_topo_file"!  The file for the ice-shelf bed topography.
-BED_TOPO_VARNAME = "bed_elev"   ! The variable for the bed topography
-ICE_SHELF_BC_FILE = "/path_to_is_bc_file"!  The input file for the ice-shelf b.c.s.
+BED_TOPO_FILE = "Grnld_4km.nc"!  The file for the ice-shelf bed topography.
+BED_TOPO_VARNAME = "bed"   ! The variable for the bed topography
+ICE_SHELF_BC_FILE = "Grnld_4km_velocity.nc"!  The input file for the ice-shelf b.c.s.
 ICE_THICKNESS_MASK_VARNAME = "h_mask"    ! [none] default "h_mask"
                                          ! The variable for ice-thickness mask
-ICE_UBDRYMSK_VARNAME = "ufacemask"       ![none] default "ufacemask"
+ICE_UBDRYMSK_VARNAME = "umask"       ![none] default "ufacemask"
                                          ! The variable for u_face_bondary_mask
-ICE_VBDRYMSK_VARNAME = "vfacemask"       ![none] default "vfacemask"
+ICE_VBDRYMSK_VARNAME = "vmask"       ![none] default "vfacemask"
                                          ! The variable for v_face_bondary_mask
-ICE_UBDRYVAL_VARNAME = "ubdry_val"       ![m/s] default "ubdry_val"
+ICE_UBDRYVAL_VARNAME = "uvel"       ![m/s] default "ubdry_val"
                                          ! The variable for u_bdry_val
-ICE_VBDRYVAL_VARNAME = "vbdry_val"       ![m/s] default "vbdry_val"
+ICE_VBDRYVAL_VARNAME = "vvel"       ![m/s] default "vbdry_val"
 
 
 DATA_OVERRIDE_SHELF_FLUXES = True                                         !Read SMB from a file
@@ -75,13 +75,13 @@ ICE_SHELF_TEMPERATURE = -20.0
 DENSITY_ICE = 917.
 USTAR_SHELF_BG = 0.00001
 ICE_PROFILE_CONFIG = "FILE"
-ICE_THICKNESS_FILE = "/path_to_ice_thick_file"
-ICE_THICKNESS_VARNAME = "thick_shelf"
+ICE_THICKNESS_FILE = "Grnld_4km.nc"
+ICE_THICKNESS_VARNAME = "thickness"
 ICE_AREA_VARNAME = "shelf_area"
 TRIM_IC_FOR_P_SURF = True
 COL_THICK_MELT_THRESHOLD = 1.0
-SURFACE_PRESSURE_FILE = "/path_to_surf_pres_file"
-SURFACE_PRESSURE_VAR = "thick_shelf"
+SURFACE_PRESSURE_FILE = "Grnld_4km.nc"
+SURFACE_PRESSURE_VAR = "thick"
 SURFACE_PRESSURE_SCALE = 8986.6 # rho_ice*grav
 !ICE_SHELF_BUOYANCY_FLUX_ITT_BUG = False
 MIN_H_SHELF = 10.0  !(m)

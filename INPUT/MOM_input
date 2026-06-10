@@ -1,7 +1,7 @@
 ! This file was written by the model and records the non-default parameters used at run-time.
 
 ! === module MOM ===
-ADIABATIC = True                !   [Boolean] default = False
+ADIABATIC = False                !   [Boolean] default = False
                                 ! There are no diapycnal mass fluxes if ADIABATIC is true.  This assumes that KD
                                 ! = 0.0 and that there is no buoyancy forcing, but makes the model faster by
                                 ! eliminating subroutine calls.
@@ -88,6 +88,10 @@ TOPO_CONFIG = "file"            !
                                 !     Phillips - ACC-like idealized topography used in the Phillips config.
                                 !     dense - Denmark Strait-like dense water formation and overflow.
                                 !     USER - call a user modified routine.
+TOPO_FILE = "Grnld_4km.nc"
+
+TOPO_VARNAME = "bed"
+
 MINIMUM_DEPTH = 1.0             !   [m] default = 0.0
                                 ! If MASKING_DEPTH is unspecified, then anything shallower than MINIMUM_DEPTH is
                                 ! assumed to be land and all fluxes are masked out. If MASKING_DEPTH is
@@ -259,7 +263,7 @@ TIMEUNIT = 8.64E+04
 ! === module MOM_restart ===
 
 ! === module MOM_main (MOM_driver) ===
-DAYMAX = 1.0                    !   [days]
+DAYMAX = 1000.0                 !   [days]
                                 ! The final time of the whole simulation, in units of TIMEUNIT seconds.  This
                                 ! also sets the potential end time of the present run segment if the end time is
                                 ! not set via ocean_solo_nml in input.nml.
