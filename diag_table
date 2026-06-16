@@ -1,0 +1,17 @@
+Grnlnd_IS
+1 1 1 0 0 0
+"ice_shelf_%4yr",        1,"days",1,"days","time",1,"years"
+"ice_shelf_model","h_shelf","h_shelf","ice_shelf_%4yr","all",.false.,"none",2
+"ice_shelf_model","h_mask","h_mask","ice_shelf_%4yr","all",.false.,"none",2
+"ice_shelf_model","u_mask","u_mask","ice_shelf_%4yr","all",.false.,"none",2
+"ice_shelf_model","v_mask","v_mask","ice_shelf_%4yr","all",.false.,"none",2
+"ice_shelf_model","u_shelf","u_shelf","ice_shelf_%4yr","all",.false.,"none",2
+"ice_shelf_model","v_shelf","v_shelf","ice_shelf_%4yr","all",.false.,"none",2
+"ice_shelf_model","area_shelf_h","area_shelf_h","ice_shelf_%4yr","all",.false.,"none",2
+"ice_shelf_model","col_thick","col_thick","ice_shelf_%4yr","all",.false.,"none",2
+"ice_shelf_model","ice_ground_frac","ice_ground_frac","ice_shelf_%4yr","all",.false.,"none",2
+"ice_shelf_model","taudx_shelf","taudx_shelf","ice_shelf_%4yr","all",.false.,"none",2
+"ice_shelf_model","taudy_shelf","taudy_shelf","ice_shelf_%4yr","all",.false.,"none",2
+"ice_shelf_model","ice_visc","ice_visc","ice_shelf_%4yr","all",.false.,"none",2
+"ice_shelf_model","sfc_mass_flux","a_dot","ice_shelf_%4yr","all",.false.,"none",2
+"ice_shelf_model","dhdt_shelf","h_t","ice_shelf_%4yr","all",.false.,"none",2
