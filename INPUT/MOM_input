@@ -23,10 +23,10 @@ MIN_SALINITY = 0.01             !   [PPT] default = 0.0
 REENTRANT_X = False              !   [Boolean] default = True
                                 ! If true, the domain is zonally reentrant.
 REENTRANT_Y = False             !   [Boolean] default = False
-NIGLOBAL = 420                  ! 1680 (1km), 840 (2km), 420 (4km)
+NIGLOBAL = 1680                 ! 1680 (1km), 840 (2km), 420 (4km)
                                 ! The total number of thickness grid points in the x-direction in the physical
                                 ! domain. With STATIC_MEMORY_ this is set in MOM_memory.h at compile time.
-NJGLOBAL = 720                  ! 2880 (1km), 1440 (2km), 720 (4km)
+NJGLOBAL = 2880                 ! 2880 (1km), 1440 (2km), 720 (4km)
                                 ! The total number of thickness grid points in the y-direction in the physical
                                 ! domain. With STATIC_MEMORY_ this is set in MOM_memory.h at compile time.
 
@@ -51,12 +51,12 @@ AXIS_UNITS = "m"                ! default = "degrees"
                                 !     degrees - degrees of latitude and longitude
                                 !     m - meters
                                 !     k - kilometers
-SOUTHLAT = -569500.0                  !   [k]
+SOUTHLAT = -3450000.0                  !   [k]
                                 ! The southern latitude of the domain or the equivalent starting value for the
                                 ! y-axis.
-LENLAT = -2880000.0                   !   [k]
+LENLAT = 2880000.0                   !   [k]
                                 ! The latitudinal or y-direction length of the domain.
-WESTLON = -720500.0                 !   [k] default = 0.0
+WESTLON = -720000.0                 !   [k] default = 0.0
                                 ! The western longitude of the domain or the equivalent starting value for the
                                 ! x-axis.
 LENLON = 1680000.0                  !   [k]
@@ -88,7 +88,7 @@ TOPO_CONFIG = "file"            !
                                 !     Phillips - ACC-like idealized topography used in the Phillips config.
                                 !     dense - Denmark Strait-like dense water formation and overflow.
                                 !     USER - call a user modified routine.
-TOPO_FILE = "Grnld_4km.nc"
+TOPO_FILE = "Grnld_1km.nc"
 
 TOPO_VARNAME = "bed"
 

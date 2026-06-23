@@ -16,7 +16,7 @@ SHELF_2EQ_GAMMA_T = 1.0E-04     !   [m s-1]
 
 ICE_A_GLEN_CONFIG = "FILE"  !This specifies how the ice-stiffness parameter is specified.
                             !Valid values are: "CONSTANT" and "FILE".
-ICE_STIFFNESS_FILE = "Grnld_4km_rheology.nc" ! File with ice-stiffness parameters
+ICE_STIFFNESS_FILE = "Grnld_1km_rheology.nc" ! File with ice-stiffness parameters
 A_GLEN_VARNAME = "A_glen" ! The name of the variable with ice-stiffness parameter.
 A_GLEN = 2.261e-25     ! ice stiffness parameter Pa ^ (-1/3) s
 ICE_VISCOSITY_COMPUTE = "MODEL"   ! This specifies whether the ice-viscosity is constant, computed internally by the model or
@@ -29,7 +29,7 @@ GLEN_EXPONENT = 3               ! ice flow-law exponent
 MIN_STRAIN_RATE_GLEN = 1e-22    ! regularization parameter for flow law (s)^(-1)
 ICE_BASAL_FRICTION_CONFIG = "FILE"  !This specifies how the initial ice profile is specified. "
                                         !Valid values are: "CONSTANT" and "FILE".
-BASAL_FRICTION_FILE = "Grnld_4km_rheology.nc" ! File with basal friction coefficients
+BASAL_FRICTION_FILE = "Grnld_1km_rheology.nc" ! File with basal friction coefficients
 BASAL_FRICTION_VARNAME = "tau_b_beta" ! The name of the variable with basal friction coefficients
 BASAL_FRICTION_COEFF = 1.0e10   ! basal friction coeffiecient Pa (m/s)^(-1)
 BASAL_FRICTION_EXP = 1          ! sliding law exponent
@@ -39,7 +39,7 @@ ICE_VELOCITY_TIMESTEP = 8.64e4   ! time step for ice dynamics in seconds
 CONJUGATE_GRADIENT_TOLERANCE = 1e-7 ! tolerance for conjugate gradient
 ICE_NONLINEAR_TOLERANCE = 1e-7  ! tolerance on ice velocity
 CONJUGATE_GRADIENT_MAXIT = 2000 ! number of maximum iterations
-NONLIN_SOLVE_ERR_MODE = 3       ! 2
+NONLIN_SOLVE_ERR_MODE = 4       ! 2
 WRITE_OUTPUT_TO_FILE = TRUE     ! for debugging without netcdf capability
 ICE_SHELF_CFL_FACTOR =.25       ! CFL for the ice-shelf advection
 SHELF_MOVING_FRONT = FALSE      ! This specifies whether the calving front can move
@@ -48,14 +48,14 @@ GROUNDING_LINE_INTERPOLATE = True ! This specifies whether subgrid grounding lin
 GROUNDING_LINE_INTERP_SUBGRID_N = 5 ! This specifies the number of subgrid fractions
 
 ! === module MOM_ice_shelf_initialize ===
-ICE_VELOCITY_FILE = "Grnld_4km_velocity.nc"!  The file for the ice-shelf velocities.
+ICE_VELOCITY_FILE = "Grnld_1km_velocity.nc"!  The file for the ice-shelf velocities.
 ICE_U_VEL_VARNAME = "uvel"   ![m/s] default = "u_shelf"
                                ! The  variable for the u ice-shelf  velocity component.
 ICE_V_VEL_VARNAME = "vvel"   ![m/s] default = "v_shelf"
                                 ! The  variable for the v ice-shelf  velocity component
-BED_TOPO_FILE = "Grnld_4km.nc"!  The file for the ice-shelf bed topography.
+BED_TOPO_FILE = "Grnld_1km.nc"!  The file for the ice-shelf bed topography.
 BED_TOPO_VARNAME = "bed"   ! The variable for the bed topography
-ICE_SHELF_BC_FILE = "Grnld_4km_velocity.nc"!  The input file for the ice-shelf b.c.s.
+ICE_SHELF_BC_FILE = "Grnld_1km_velocity.nc"!  The input file for the ice-shelf b.c.s.
 ICE_THICKNESS_MASK_VARNAME = "h_mask"    ! [none] default "h_mask"
                                          ! The variable for ice-thickness mask
 ICE_UBDRYMSK_VARNAME = "umask"       ![none] default "ufacemask"
@@ -75,12 +75,12 @@ ICE_SHELF_TEMPERATURE = -20.0
 DENSITY_ICE = 917.
 USTAR_SHELF_BG = 0.00001
 ICE_PROFILE_CONFIG = "FILE"
-ICE_THICKNESS_FILE = "Grnld_4km.nc"
+ICE_THICKNESS_FILE = "Grnld_1km.nc"
 ICE_THICKNESS_VARNAME = "thickness"
 ICE_AREA_VARNAME = "shelf_area"
 TRIM_IC_FOR_P_SURF = True
 COL_THICK_MELT_THRESHOLD = 1.0
-SURFACE_PRESSURE_FILE = "Grnld_4km.nc"
+SURFACE_PRESSURE_FILE = "Grnld_1km.nc"
 SURFACE_PRESSURE_VAR = "thick"
 SURFACE_PRESSURE_SCALE = 8986.6 # rho_ice*grav
 !ICE_SHELF_BUOYANCY_FLUX_ITT_BUG = False
@@ -90,6 +90,6 @@ MAX_SURFACE_SLOPE = 0.1
 GUST_CONST = 0.02
 TFREEZE_FORM = "Linear"
 ICE_SMB_CONFIG = "FILE"
-ICE_SMB_FILE = "Grnld_4km_forcing.nc"
+ICE_SMB_FILE = "Grnld_1km_forcing.nc"
 ICE_SMB_VARNAME = "acabf"
 ICE_SMB_TIME_VARYING = True
